@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Варіант в</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin: 30px auto 15px;
+            max-width: 600px;
+        }
+        /* Варіант 1 - Таблиця */
+        .table-layout {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border: 2px solid #333;
+            table-layout: fixed;
+            background-color: white;
+        }
+
+        .table-layout td {
+            padding: 0;
+        }
+        /* Блок 1 */
+        .table-1 {
+            height: 60px;
+            background-color: #0875ed;
+            color: white;
+            text-align: left;
+            vertical-align: middle;
+            padding-left: 20px !important;
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .table-1:hover {
+            background-color: #005acb;
+        }
+        /* Блок 5 */
+        .table-5 {
+            width: 130px;
+            background-color: #ffca05;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 24px;
+            font-weight: bold;
+            border-right: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .table-5:hover {
+            background-color: #e8b500;
+        }
+        /* Блок 4 */
+        .table-4 {
+            width: 240px;
+            background-color: white;
+            vertical-align: top;
+            padding: 15px !important;
+            transition: 0.3s;
+        }
+
+        .table-4:hover {
+            background-color: #f1f1f1;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.15);
+        }
+        /* Блок 2 */
+        .table-2 {
+            width: 130px;
+            background-color: #ffca05;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 24px;
+            font-weight: bold;
+            border-left: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .table-2:hover {
+            background-color: #e8b500;
+        }
+        /* Блок 3 */
+        .table-3 {
+            height: 60px;
+            background-color: #0875ed;
+            color: white;
+            text-align: left;
+            vertical-align: middle;
+            padding-left: 20px !important;
+            font-size: 24px;
+            font-weight: bold;
+            border-top: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .table-3:hover {
+            background-color: #005acb;
+        }
+        /* Варіант 2 - Блоки */
+        .wrapper {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #333;
+            background-color: white;
+            overflow: hidden;
+        }
+        /* Блок 1 */
+        .b1 {
+            height: 60px;
+            flex-shrink: 0;
+            background-color: #0875ed;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .b1:hover {
+            background-color: #005acb;
+        }
+
+        /* Середня частина */
+        .middle {
+            flex: 1;
+            display: flex;
+            min-height: 0;
+        }
+        /* Блок 5 */
+        .b5 {
+            width: 130px;
+            flex-shrink: 0;
+            background-color: #ffca05;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-right: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .b5:hover {
+            background-color: #e8b500;
+        }
+        /* Блок 4 */
+        .b4 {
+            width: 240px;
+            flex-shrink: 0;
+            background-color: white;
+            padding: 15px;
+            overflow-y: auto;
+            color: #111;
+            transition: 0.3s;
+        }
+
+        .b4:hover {
+            background-color: #f1f1f1;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.15);
+        }
+        /* Блок 2 */
+        .b2 {
+            width: 130px;
+            flex-shrink: 0;
+            background-color: #ffca05;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-left: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .b2:hover {
+            background-color: #e8b500;
+        }
+        /* Блок 3 */
+        .b3 {
+            height: 60px;
+            flex-shrink: 0;
+            background-color: #0875ed;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            border-top: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .b3:hover {
+            background-color: #005acb;
+        }
+        /* Текст у 4 блоці */
+        .content-area h1 {
+            color: #0875ed;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .content-area p {
+            font-size: 13px;
+            line-height: 1.4;
+            margin: 8px 0;
+        }
+
+        .content-area span {
+            background-color: yellow;
+            padding: 2px;
+        }
+
+        .content-area div {
+            background-color: #eeeeee;
+            padding: 7px;
+            margin: 8px 0;
+        }
+
+        .content-area ul {
+            padding-left: 20px;
+            font-size: 13px;
+        }
+
+        .content-area li {
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Варіант 1 - Таблиця -->
+    <h2>Варіант 1 — розмітка за допомогою таблиці</h2>
+    <table class="table-layout">
+        <!-- Блок 1 -->
+        <tr>
+            <td colspan="3" class="table-1">1</td>
+        </tr>
+        <!-- Блоки 5, 4, 2 -->
+        <tr>
+            <td class="table-5">5</td>
+            <td class="table-4 content-area">
+                <h1>Заголовок</h1>
+                <p>Це <b>довільний текст</b>, який знаходиться у білому блоці.</p>
+                <p>Тут використовується <i>курсивний текст</i> та <span>виділений текст</span>.</p>
+                <div>Додатковий абзац із довільною інформацією.</div>
+                <p>Ненумерований список:</p>
+                <ul>
+                    <li>Перший пункт</li>
+                    <li>Другий пункт</li>
+                    <li>Третій пункт</li>
+                </ul>
+            </td>
+            <td class="table-2">2</td>
+        </tr>
+        <!-- Блок 3 -->
+        <tr>
+            <td colspan="3" class="table-3">3</td>
+        </tr>
+    </table>
+    <!-- Варіант 2 - Блоки -->
+    <h2>Варіант 2 — розмітка за допомогою блоків</h2>
+    <div class="wrapper">
+        <!-- Блок 1 -->
+        <div class="b1">1</div>
+        <div class="middle">
+            <div class="b5">5</div>
+            <div class="b4 content-area">
+                <h1>Заголовок</h1>
+                <p>Це <b>довільний текст</b>, який знаходиться у білому блоці.</p>
+                <p>Тут використовується <i>курсивний текст</i> та <span>виділений текст</span>.</p>
+                <div>Додатковий абзац із довільною інформацією.</div>
+                <p>Ненумерований список:</p>
+                <ul>
+                    <li>Перший пункт</li>
+                    <li>Другий пункт</li>
+                    <li>Третій пункт</li>
+                </ul>
+            </div>
+            <div class="b2">2</div>
+        </div>
+        <!-- Блок 3 -->
+        <div class="b3">3</div>
+    </div>
+</body>
+</html>

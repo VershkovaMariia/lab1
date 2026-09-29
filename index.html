@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Варіант а</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+            background-color: #eeeeee;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* Головний заголовок */
+        .main-title {
+            text-align: center;
+            margin: 0 0 35px 0;
+        }
+        /* Заголовки варіантів */
+        h2 {
+            width: 700px;
+            text-align: center;
+            margin: 25px 0 20px 0;
+        }
+        /* варіант 1*/
+        .table-layout {
+            width: 700px;
+            height: 650px;
+            margin: 0 auto 60px auto;
+            border-collapse: collapse;
+            border: 3px solid #333;
+            background-color: white;
+        }
+
+        .table-layout td {
+            padding: 0;
+        }
+        /* Блок 2 */
+        .table-2 {
+            width: 80px;
+            background-color: #ffcc05;
+            color: #111;
+            font-size: 28px;
+            text-align: center;
+            vertical-align: middle;
+            border: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .table-2:hover {
+            background-color: #e5b800;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.25);
+        }
+        /* Блок 1 */
+        .table-1 {
+            height: 80px;
+            background-color: #0878f9;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: left;
+            vertical-align: middle;
+            padding-left: 25px !important;
+            border: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .table-1:hover {
+            background-color: #005dcc;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+        /* Блок 4 */
+        .table-4 {
+            background-color: white;
+            color: #111;
+            padding: 25px !important;
+            vertical-align: top;
+            border: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .table-4:hover {
+            background-color: #f5f5f5;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        /* Блок 3 */
+        .table-3 {
+            height: 80px;
+            background-color: #0878f9;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: left;
+            vertical-align: middle;
+            padding-left: 25px !important;
+            border: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .table-3:hover {
+            background-color: #005dcc;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+
+        .table-edge {
+            width: 30px;
+            background-color: white;
+            border: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .table-edge:hover {
+            background-color: #cccccc;
+        }
+        /* варіант 2 */
+        .flex-layout {
+            width: 700px;
+            height: 650px;
+            margin: 0 auto 60px auto;
+            display: flex;
+            border: 3px solid #333;
+            background-color: white;
+        }
+        /* Блок 2 */
+        .flex-2 {
+            width: 80px;
+            flex-shrink: 0;
+            background-color: #ffcc05;
+            color: #111;
+            font-size: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .flex-2:hover {
+            background-color: #e5b800;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .flex-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flex-1 {
+            height: 80px;
+            flex-shrink: 0;
+            background-color: #0878f9;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            padding-left: 25px;
+            border-bottom: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .flex-1:hover {
+            background-color: #005dcc;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Блок 4 */
+        .flex-4 {
+            flex: 1;
+            background-color: white;
+            color: #111;
+            padding: 25px;
+            overflow: auto;
+            border-bottom: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .flex-4:hover {
+            background-color: #f5f5f5;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        /* Блок 3 */
+        .flex-3 {
+            height: 80px;
+            flex-shrink: 0;
+            background-color: #0878f9;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            padding-left: 25px;
+            transition: 0.3s;
+        }
+
+        .flex-3:hover {
+            background-color: #005dcc;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+
+
+        .flex-edge {
+            width: 30px;
+            flex-shrink: 0;
+            background-color: white;
+            border-left: 2px solid #333;
+            transition: 0.3s;
+        }
+
+        .flex-edge:hover {
+            background-color: #cccccc;
+        }
+
+
+        /* Текст у 4 блоці */
+        .content h1 {
+            color: #0878f9;
+            font-size: 28px;
+            margin-top: 0;
+        }
+
+        .content p {
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        .content span {
+            background-color: yellow;
+            padding: 2px 5px;
+        }
+
+        .content div {
+            margin: 15px 0;
+            padding: 12px;
+            background-color: #eeeeee;
+            border-left: 5px solid #0878f9;
+        }
+
+        .content ul {
+            padding-left: 25px;
+        }
+
+        .content li {
+            margin: 8px 0;
+        }
+        /* адаптивність*/
+        @media (max-width: 750px) {
+            body {
+                padding: 15px;
+            }
+            h2 {
+                width: 100%;
+                font-size: 22px;
+            }
+            .table-layout,
+            .flex-layout {
+                width: 95%;
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- варіант 1 - таблиця -->
+    <h2>
+        Розмітка за допомогою таблиці
+    </h2>
+    <table class="table-layout">
+        <!-- блок 2 -->
+        <tr>
+            <td class="table-2" rowspan="3">
+                2
+            </td>
+            <!-- блок 1 -->
+            <td class="table-1">
+                1
+            </td>
+            <td class="table-edge" rowspan="3">
+            </td>
+
+        </tr>
+        <!-- блок 4 -->
+        <tr>
+            <td class="table-4 content">
+                <h1>
+                    Основний блок
+                </h1>
+                <p>
+                    Це <b>довільний текст</b>,
+                    розміщений в основному білому блоці.
+                </p>
+                <p>
+                    Тут використовується
+                    <i>HTML-розмітка</i> та CSS.
+                    Важливу інформацію можна
+                    <span>виділити кольором</span>.
+                </p>
+                <div>
+                    Це додатковий інформаційний блок.
+                    Він створений за допомогою тегу
+                    <b>div</b>.
+                </div>
+                <p>
+                    На сторінці представлені різні
+                    елементи форматування тексту.
+                </p>
+                <p>
+                    Список можливостей:
+                </p>
+                <ul>
+                    <li>HTML-розмітка</li>
+                    <li>CSS-оформлення</li>
+                    <li>Таблична верстка</li>
+                    <li>Блочна верстка</li>
+                </ul>
+
+            </td>
+        </tr>
+        <!-- блок 3 -->
+        <tr>
+            <td class="table-3">
+                3
+            </td>
+
+        </tr>
+    </table>
+    <!-- варіант 2 - блоки -->
+    <h2>
+        Розмітка за допомогою блоків
+    </h2>
+    <div class="flex-layout">
+        <div class="flex-2">
+            2
+        </div>
+        <div class="flex-right">
+            <div class="flex-1">
+                1
+            </div>
+            <div class="flex-4 content">
+                <h1>
+                    Основний блок
+                </h1>
+                <p>
+                    Це <b>довільний текст</b>,
+                    розміщений в основному білому блоці.
+                </p>
+                <p>
+                    Тут використовується
+                    <i>HTML-розмітка</i> та CSS.
+                    Важливу інформацію можна
+                    <span>виділити кольором</span>.
+                </p>
+                <div>
+                    Це додатковий інформаційний блок.
+                    Він створений за допомогою тегу
+                    <b>div</b>.
+                </div>
+                <p>
+                    На сторінці представлені різні
+                    елементи форматування тексту.
+                </p>
+                <p>
+                    Список можливостей:
+                </p>
+                <ul>
+                    <li>HTML-розмітка</li>
+                    <li>CSS-оформлення</li>
+                    <li>Таблична верстка</li>
+                    <li>Блочна верстка</li>
+                </ul>
+
+            </div>
+            <div class="flex-3">
+                3
+            </div>
+        </div>
+        <div class="flex-edge">
+        </div>
+    </div>
+</body>
+</html>
